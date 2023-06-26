@@ -1,0 +1,13 @@
+<script runat=server>
+  Platform.Load("Core", "1");
+
+  var clientIP = Platform.Request.ClientIP;
+
+  Platform.Response.Write("<br>");
+  Platform.Response.Write("<p>Client IP: "); 
+    Platform.Response.Write(clientIP);
+    Platform.Response.Write("</p>");
+  Platform.Response.Write("<br>");
+  
+  
+</script>
