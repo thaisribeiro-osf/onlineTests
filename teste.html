@@ -5,4 +5,11 @@
   
   Platform.Response.Write(resp);
 
+  var obj = Platform.Function.ParseJSON(resp);
+
+  var country = obj.country;
+
+  Platform.Response.Write("<br>");
+  Platform.Response.Write("Your Country is: " + country);
+
 </script>
