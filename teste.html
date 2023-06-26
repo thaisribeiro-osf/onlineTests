@@ -9,7 +9,16 @@
 
   var country = obj.country;
 
-  Platform.Response.Write("<br>");
-  Platform.Response.Write("Your Country is: " + country);
+  if (country = "Brazil") {
+    shipMessage = "We ship to " + country + "!";
+  } else {
+    shipMessage = "We DON'T ship to " + country + "!";
+  }
+
+  Platform.Variable.SetValue('country', country)
+  Platform.Variable.SetValue('shipMessage', shipMessage);
 
 </script>
+
+<p>You are from: %%=v(@country)=%%</p>
+<p>%%=v(@shipMessage)=%%</p>
