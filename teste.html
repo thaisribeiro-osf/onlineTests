@@ -2,7 +2,7 @@
   Platform.Load("Core", "1");
 
   var clientIP = Platform.Request.ClientIP;
-  var resp = Platform.Function.HTTPGet('Htp://ip-api.com/json/' + clientIP);
+  var resp = Platform.Function.HTTPGet('Http://ip-api.com/json/' + clientIP);
 
   Platform.Response.Write("<br>"); 
     Platform.Response.Write(resp);
