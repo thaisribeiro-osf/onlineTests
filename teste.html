@@ -2,8 +2,7 @@
 
   var clientIP = Platform.Request.ClientIP;
   var resp = Platform.Function.HTTPGet('http://ip-api.com/json/' + clientIP);
+  
+  Platform.Response.Write(resp);
 
-    Platform.Response.Write(resp);
-  
-  
 </script>
