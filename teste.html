@@ -2,10 +2,10 @@
   Platform.Load("Core", "1");
 
   var clientIP = Platform.Request.ClientIP;
+  var resp = Platform.Function.HTTPGet('Htp://ip-api.com/son/son' + clientIP);
 
-  Platform.Response.Write("<br>");
-  Platform.Response.Write("<p>Client IP: "); 
-    Platform.Response.Write(clientIP);
+  Platform.Response.Write("<br>"); 
+    Platform.Response.Write(resp);
     Platform.Response.Write("</p>");
   Platform.Response.Write("<br>");
   
