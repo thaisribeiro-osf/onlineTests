@@ -1,0 +1,26 @@
+<script runat="server">
+  Platform.Load('core', '1');
+
+  const deName = 'STG_IPWarming_CountDomains_Final';
+
+  const srcDE = DataExtension.Init(deName);
+
+  const srcFields = srcDE.Fields.Retrieve();
+
+  const fieldArr = [];
+
+  for (let i = 0; (i = srcFields.length); i++) {
+    const fields = {};
+    field.Name = srcFields[i].Name;
+    field.FieldType = srcFields[1].FieldType;
+    if (srcFields[i].FieldType == 'Text') {
+      field.MaxLength = srcFields[i].MaxLength;
+    }
+    if (srcFields[i].IsPrimaryKey) {
+      field.IsPrimaryKey = true;
+      field.IsRequired = true;
+    }
+    fieldArr.push(fields);
+  }
+  Write(fieldArr);
+</script>

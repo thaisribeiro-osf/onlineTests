@@ -1,8 +1,7 @@
-<script runat=server>
-
+<script runat="server">
   var clientIP = Platform.Request.ClientIP;
-  var resp = Platform.Function.HTTPGet('http://ip-api.com/json/' + clientIP);
-  
+  var resp = Platform.Function.HTTPGet("http://ip-api.com/json/" + clientIP);
+
   Platform.Response.Write(resp);
 
   var obj = Platform.Function.ParseJSON(resp);
@@ -15,9 +14,8 @@
     shipMessage = "We DON'T ship to " + country + "!";
   }
 
-  Platform.Variable.SetValue('country', country)
-  Platform.Variable.SetValue('shipMessage', shipMessage);
-
+  Platform.Variable.SetValue("country", country);
+  Platform.Variable.SetValue("shipMessage", shipMessage);
 </script>
 
 <p>You are from: %%=v(@country)=%%</p>
