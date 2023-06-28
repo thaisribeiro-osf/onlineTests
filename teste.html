@@ -9,7 +9,7 @@
   var srcDE = DataExtension.Init(srcDeNameKey);
   var srcFields = srcDE.Fields.Retrieve();
 
-    var fieldArr = [];
+  var fieldArr = [];
 
   for ( var i = 0; i = srcFields.length; i++) {
     var fields = {};
@@ -25,6 +25,6 @@
     fieldArr.push(field);
   };
 
-  Write(fieldArr);
+  Write(Stringify(fieldArr));
 
 </script>
