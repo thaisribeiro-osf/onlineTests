@@ -1,24 +1,13 @@
 <script runat=server>
 
-  var clientIP = Platform.Request.ClientIP;
-  var resp = Platform.Function.HTTPGet('http://ip-api.com/json/' + clientIP);
-  
-  Platform.Response.Write(resp);
+  Platform.Load("core", "1");
 
-  var obj = Platform.Function.ParseJSON(resp);
+  var srcDENameKey = "CustomerOrders";
 
-  var country = obj.country;
+  var srcDE = DataExtension.Init(srcDeNameKey);
 
-  if (country === "Australia") {
-    shipMessage = "We ship to " + country + "!";
-  } else {
-    shipMessage = "We DON'T ship to " + country + "!";
-  }
+  var srcFields = srcDE.Fields.Retrieve();
 
-  Platform.Variable.SetValue('country', country)
-  Platform.Variable.SetValue('shipMessage', shipMessage);
+  Write(srcFields);
 
 </script>
-
-<p>You are from: %%=v(@country)=%%</p>
-<p>%%=v(@shipMessage)=%%</p>
