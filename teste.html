@@ -12,22 +12,6 @@
   Write(srcFields);
 
 
-  var fieldArr = [];
-
-  for ( var i = 0; i = srcFields.length; i++) {
-    var fields = {};
-    field.Name = srcFields[i].Name;
-    field.FieldType = srcFields[1].FieldType;
-    if (srcFields[i].FieldType == 'Text') {
-      field.MaxLength = srcFields[i].MaxLength;
-    };
-    if (srcFields[i].IsPrimaryKey) {
-      field.IsPrimaryKey = true;
-      field.IsRequired = true;
-    };
-    fieldArr.push(field);
-  };
-
-  Write(fieldArr);
+  Write(JSON.stringify(srcFields));
 
 </script>
