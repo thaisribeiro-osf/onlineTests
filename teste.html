@@ -9,8 +9,6 @@
   var srcDE = DataExtension.Init("STG_IPWarming_CountDomains_Final");
   var srcFields = srcDE.Fields.Retrieve();
 
-  Write(JSON.stringify(srcFields));
-
   /*var fieldArr = [];
 
   for ( var i = 0; i = srcFields.length; i++) {
@@ -29,3 +27,16 @@
 
 </script>
 
+<br>
+<script runat=server>
+  Write(Stringify(srcFields.length));
+</script>
+<br>
+<script runat=server>
+  Write(Stringify(srcFields));
+</script>
+<br>
+<script runat=server>
+  Write(srcFields);
+</script>
+<br>
