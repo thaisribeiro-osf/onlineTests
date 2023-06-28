@@ -4,11 +4,10 @@
 
   var srcDENameKey = "STG_IPWarming_CountDomains_Final";
 
+  DataExtension.Init(srcDeNameKey);
+
   var srcDE = DataExtension.Init(srcDeNameKey);
-
-  var srcFields = Stringify(srcDE.Fields.Retrieve());
-
-  Platform.Response.Write(srcFields);
+  var srcFields = srcDE.Fields.Retrieve();
 
   Write(srcFields);
 
