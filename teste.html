@@ -8,11 +8,8 @@
 
   var srcDE = DataExtension.Init("STG_IPWarming_CountDomains_Final");
   var srcFields = srcDE.Fields.Retrieve();
-  var formattedJSON = srcFields.map(function(field) {
-    return JSON.stringify(field, null, 2);
-  }).join(",\n");
 
-  /*var fieldArr = [];
+  var fieldArr = [];
 
   for ( var i = 0; i = srcFields.length; i++) {
     var fields = {};
@@ -26,24 +23,8 @@
       field.IsRequired = true;
     };
     fieldArr.push(field);
-  };*/
+  };
+
+  Write(Stringify(fieldArr));
 
 </script>
-
-<br>
-<script runat=server>
-  Write(Stringify(srcFields.length));
-</script>
-<br>
-<script runat=server>
-  Write(Stringify(srcFields));
-</script>
-<br>
-<script runat=server>
-  Write(srcFields);
-</script>
-<br>
-<script runat=server>
-  Write(formattedJSON);
-</script>
-<br>
