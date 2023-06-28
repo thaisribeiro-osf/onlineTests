@@ -1,6 +1,5 @@
-<p>Teste 11</p>
-
 <script runat="server">
+
   Platform.Load("core", "1");
 
   var srcDENameKey = "STG_IPWarming_CountDomains_Final";
