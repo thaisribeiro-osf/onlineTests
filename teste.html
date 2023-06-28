@@ -6,24 +6,8 @@
 
   var srcDE = DataExtension.Init(srcDeNameKey);
 
-  var srcFields = srcDE.Fields.Retrieve();
+  var srcFields = Stringify(srcDE.Fields.Retrieve());
 
-  Write(Stringify(srcFields));
-
-  /*var fieldArr = [];
-
-  for ( var i = 0; i = srcFields.length; i++) {
-    var fields = {};
-    field.Name = srcFields[i].Name;
-    field.FieldType = srcFields[1].FieldType;
-    if (srcFields[i].FieldType == 'Text') {
-      field.MaxLength = srcFields[i].MaxLength;
-    };
-    if (srcFields[i].IsPrimaryKey) {
-      field.IsPrimaryKey = true;
-      field.IsRequired = true;
-    };
-    fieldArr.push(field);
-  };*/
+  Platform.Response.Write("Fields: ", "<br>", srcFields);
 
 </script>
