@@ -2,33 +2,28 @@
 
 <script runat="server">
   Platform.Load('Core', '1');
+  console.log('executing code');
+  var deName = 'STG_IPWarming_CountDomains_Final';
 
-  try {
-    console.log('executing code');
-    var deName = 'STG_IPWarming_CountDomains_Final';
+  var srcDE = DataExtension.Init(deName);
 
-    var srcDE = DataExtension.Init(deName);
+  var srcFields = srcDE.Fields.Retrieve();
 
-    var srcFields = srcDE.Fields.Retrieve();
+  var fieldArr = [];
 
-    var fieldArr = [];
-
-    for (var i = 0; (i = srcFields.length); i++) {
-      var field = {};
-      field.Name = srcFields[i].Name;
-      field.FieldType = srcFields[1].FieldType;
-      if (srcFields[i].FieldType == 'Text') {
-        field.MaxLength = srcFields[i].MaxLength;
-      }
-      if (srcFields[i].IsPrimaryKey) {
-        field.IsPrimaryKey = true;
-        field.IsRequired = true;
-      }
-      fieldArr.push(field);
+  for (var i = 0; (i = srcFields.length); i++) {
+    var field = {};
+    field.Name = srcFields[i].Name;
+    field.FieldType = srcFields[1].FieldType;
+    if (srcFields[i].FieldType == 'Text') {
+      field.MaxLength = srcFields[i].MaxLength;
     }
-    /*Write(Stringify(fieldArr));*/
-    console.log(fieldArr);
-  } catch (ex) {
-    console.error('An error has occurred: ' + Stringify(ex));
+    if (srcFields[i].IsPrimaryKey) {
+      field.IsPrimaryKey = true;
+      field.IsRequired = true;
+    }
+    fieldArr.push(field);
   }
+  /*Write(Stringify(fieldArr));*/
+  console.log(fieldArr);
 </script>
