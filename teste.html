@@ -1,4 +1,4 @@
-<p>teste 2</p>
+<p>teste 3</p>
 
 <script runat="server">
   Platform.Load('Core', '1');
@@ -11,7 +11,12 @@
 
   var fieldArr = [];
 
-  for (var i = 0; (i = srcFields.length); i++) {
+  console.log(deName);
+  console.log(srcDE);
+  console.log(srcFields);
+  console.log(fieldArr);
+
+  /*for (var i = 0; (i = srcFields.length); i++) {
     var field = {};
     field.Name = srcFields[i].Name;
     field.FieldType = srcFields[1].FieldType;
@@ -24,6 +29,6 @@
     }
     fieldArr.push(field);
   }
-  /*Write(Stringify(fieldArr));*/
-  console.log(fieldArr);
+  Write(Stringify(fieldArr));
+  console.log(fieldArr);*/
 </script>
