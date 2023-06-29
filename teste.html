@@ -1,16 +1,19 @@
+<p>teste 1</p>
 <script runat="server">
   Platform.Load('core', '1');
 
-  const deName = 'STG_IPWarming_CountDomains_Final';
+  var deName = 'STG_IPWarming_CountDomains_Final';
 
-  const srcDE = DataExtension.Init('STG_IPWarming_CountDomains_Final');
+  var srcDE = DataExtension.Init(deName);
 
-  const srcFields = srcDE.Fields.Retrieve();
+  var srcFields = srcDE.Fields.Retrieve();
 
-  const fieldArr = [];
+  Write(Stringfy(srcFields));
 
-  for (let i = 0; (i = srcFields.length); i++) {
-    const fields = {};
+  var fieldArr = [];
+
+  for (var i = 0; (i = srcFields.length); i++) {
+    var field = {};
     field.Name = srcFields[i].Name;
     field.FieldType = srcFields[1].FieldType;
     if (srcFields[i].FieldType == 'Text') {
@@ -20,7 +23,7 @@
       field.IsPrimaryKey = true;
       field.IsRequired = true;
     }
-    fieldArr.push(fields);
+    fieldArr.push(field);
   }
   Write(fieldArr);
 </script>
