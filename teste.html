@@ -2,6 +2,16 @@
 
 <script runat="server">
   Platform.Load('Core', '1');
+
+  var console = {
+    log: function(string) {
+        Write('<script>console.log(' + string + ')</script>');
+    },
+    error: function(string) {
+        Write('<script>console.error(' + string + ')</script>');
+    }
+  }
+  
   console.log('executing code');
   var deName = 'STG_IPWarming_CountDomains_Final';
 
